@@ -1,0 +1,566 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 1000px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px;
+    z-index: 1000;
+    transition: 0.6s;
+}
+
+header.sticky {
+    padding: 5px 100px;
+    background: rgb(255, 115, 0);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+header .logo {
+    position: relative;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+}
+
+header ul li a {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+header.sticky .logo,
+header.sticky ul li a {
+    color: black;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 99;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    background-color: orangered;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 30px;
+    border: 2px solid black;
+}
+  
+#myBtn:hover {
+    background-color: #555;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url('../pics/pumpkin-988231.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-clip: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .clouds {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.banner .clouds img {
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    animation: animate calc(5s * var(--i)) linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    25%,
+    75% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+.banner h2 {
+    color: rgb(255, 123, 0);
+    font-size: 80px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1em;
+    z-index: 1;
+    text-shadow: 0 0 15px rgb(0, 0, 0);
+}
+
+.sec {
+    background: #fff;
+    padding: 100px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec .content {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.mxw800p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h3 {
+    font-size: 40px;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+p {
+    position: relative;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#hiddenMe{
+    display: none;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    background: #000;
+    text-decoration: none;
+    color: wheat;
+    cursor: pointer;
+}
+
+.services {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+.services .box {
+    width: 300px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .5);
+}
+
+.services .box .iconBx {
+    margin-top: 25px;
+}
+
+.services .box .iconBx img {
+    max-width: 200px;
+    margin-bottom: 15px;
+}
+
+.services .box h2 {
+    font-size: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.stats {
+    width: 100%;
+    min-height: 100vh;
+    background: url('../pics/halloween-2837936.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 250px;
+    margin-top: -250px;
+}
+
+.stats h3,
+.stats p {
+    color: whitesmoke;
+}
+
+.statsBox {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+.statsBox h2 {
+    color: whitesmoke;
+    font-size: 36px;
+}
+
+.statsBox h4 {
+    color: whitesmoke;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.toggle {
+    display: none;
+}
+#versek{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: orange;
+    background-size: contain;
+    background-repeat: round;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    position: relative;
+    display: inline-block;
+    margin: 15px 15px;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+}
+.card .face{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: 2s ease-in-out;
+    transform: perspective(500px) rotateY(0deg);
+    
+}
+.card .face.front{
+    background: #ff0;
+    color: orangered;
+    font-size: 7px;
+    text-shadow: 2px 2px 2px black;
+}
+.card:hover .face.front{
+    transform: perspective(500px) rotateY(180deg);
+}
+.card .face.back{
+    background: #000;
+    transform: perspective(500px) rotateY(180deg);
+}
+.card:hover .face.back{
+    transform: perspective(500px) rotateY(360deg);
+}
+.card .face h2{
+    font-size: 3.5em;
+    text-transform: uppercase;
+    transform: perspective(500px) translateZ(50px);
+
+}
+.card .face p{
+    color: orange;
+    transform: perspective(500px) translateZ(50px);
+    font-size: 14px;
+    padding-top: 20%;
+    height: 100%;
+    width: 70%;
+    text-shadow: 2px 2px 1px #111;
+}
+
+#nl{
+    background: url('../pics/halloween-4535278.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+}
+#hp{
+    background: url('../pics/halloween-3612815.png');
+    background-position: center;
+    background-size: 100% 100%;
+}
+#secondCard p{
+    font-size: 10.8px;
+}
+#sc{
+    background: url('../pics/raven-1404801.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+}
+#scC p{
+    padding-top: 40%;
+}
+footer{
+    background: rgba(0, 0, 0, 1);
+    color: aliceblue;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    z-index: 10;
+    transition: 0.6s;
+}
+footer ul{
+    display: flex;
+    position: absolute;
+    list-style: none;
+}
+footer ul li{
+    padding: 20px;
+}
+footer ul li a {
+    text-decoration: none;
+}
+footer.sticky{
+    display: none;
+}
+
+@media(max-width: 1125px){
+    footer{
+        display: none !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .toggle {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .toggle:before {
+        content: '';
+        position: absolute;
+        top: 4px;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        z-index: 1;
+        box-shadow: 0 10px 0 #000;
+        transition: 0.5s;
+    }
+    .toggle:after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        z-index: 1;
+        transition: 0.5s;
+    }
+    header,
+    header.sticky {
+        padding: 5px 50px;
+        background: #fff;
+    }
+    header ul {
+        position: absolute;
+        top: 45px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        overflow: auto;
+        background: #fff;
+        visibility: hidden;
+        opacity: 0;
+    }
+    header.active ul {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        padding-top: 20px;
+    }
+    header.active.sticky ul li a {
+        color: #000;
+    }
+    header.active ul li a {
+        display: inline-block;
+        margin: 10px 0;
+        font-size: 20px;
+    }
+    header .logo,
+    header ul li a {
+        color: #000;
+    }
+    .banner {
+        background-position: center;
+    }
+    .banner h2 {
+        font-size: 60px;
+        padding: 0 100px;
+    }
+    .sec {
+        padding: 100px 50px 50px 50px;
+    }
+    .services .box {
+        width: 100%;
+    }
+    .stats {
+        padding-top: 250px;
+    }
+    .card{
+        bottom: 70px;
+        right: 30px;
+    }
+}
+@media (max-width: 450px) {
+    header{
+        max-width: 450px;
+        width: 450px;
+    }
+    header.active ul {
+        width: 100%;
+        height: 150vh;
+    }
+    header ul li{
+        font-size: 50px;
+    }
+    header ul li a{
+        padding: 50px;
+        background: #eee;
+        width: 100%;
+        box-shadow: 0px 0px 10px #000;
+    }
+    #text{
+        padding: 0;
+    }
+    html{
+        width: 450px;
+    }
+    .banner{
+        background-size: cover;
+    }
+    .banner h2 {
+        font-size: 50px;
+    }
+    .banner .clouds img{
+        height: 50%;
+        max-width: 450px;
+    }
+    .services {
+        margin-top: 40px;
+        margin-left: -20px;
+    }
+    .card{
+        bottom: 70px;
+        right: 30px;
+    }
+}
+@media (max-width: 380px) {
+    header{
+        max-width: 380px;
+        width: 380px;
+    }
+    header.active ul {
+        width: 100%;
+        height: 150vh;
+    }
+    header ul li{
+        font-size: 50px;
+    }
+    header ul li a{
+        padding: 50px;
+        background: #eee;
+        width: 100%;
+        box-shadow: 0px 0px 10px #000;
+    }
+    #text{
+        padding: 0;
+    }
+    html{
+        width: 380px;
+    }
+    .banner{
+        background-size: cover;
+    }
+    .banner h2 {
+        font-size: 50px;
+    }
+    .banner .clouds img{
+        height: 50%;
+        max-width: 360px;
+    }
+    .services {
+        margin-top: 40px;
+        margin-left: -20px;
+    }
+    .card{
+        bottom: 70px;
+        right: 30px;
+    }
+}
