@@ -2,7 +2,7 @@ window.addEventListener("scroll", function() {
     let header = document.querySelector("header");
     let footer = document.querySelector("footer");
     header.classList.toggle("sticky", window.scrollY > 0);
-    footer.classList.toggle("sticky", window.scrollY < 10);
+    footer.classList.toggle("sticky", window.scrollY > 0);
 })
 
 function toggle() {
