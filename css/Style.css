@@ -68,6 +68,9 @@ header.sticky .logo,
 header.sticky ul li a {
     color: black;
 }
+header a:hover{
+    color: gold;
+}
 
 #myBtn {
     display: none;
